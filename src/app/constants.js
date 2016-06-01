@@ -1,10 +1,3 @@
-export const pagesConstants = {
-    'MAIN': '/albums/',
-    'LOGIN': '/login'
-};
+let API_URL = 'http://simplegallery.vagrant/app_dev.php/api/';
 
-export const userConstants = {
-    'CURRENT_KEY': 'current',
-    'AUTH_USER_HEADER_KEY': 'token',
-    'AUTH_HEADER_KEY': 'Authorization'
-};
+export {API_URL};

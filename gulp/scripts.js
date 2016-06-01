@@ -4,7 +4,7 @@ const path = require('path');
 const gulp = require('gulp');
 const conf = require('./conf');
 const webpackStream = require('webpack-stream');
-const plumber = require("gulp-plumber");
+const plumber = require('gulp-plumber');
 const $ = require('gulp-load-plugins')();
 
 function webpack(watch, callback) {
@@ -24,7 +24,7 @@ function webpack(watch, callback) {
                     loader: 'babel',
                     query: {
                         presets: ['es2015'],
-                        plugins: ["transform-decorators-legacy", "transform-class-properties"]
+                        plugins: ['transform-decorators-legacy', 'transform-class-properties']
                     }
                 },
                 {
@@ -59,7 +59,8 @@ function webpack(watch, callback) {
     return gulp.src(conf.paths.initModule)
         .pipe($.plumber({errorHandler: conf.errorHandler('webpack-stream')}))
         .pipe(webpackStream(webpackOptions, null, webpackChangeHandler))
-        .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/js')))
+        .pipe($.ngAnnotate())
+        .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/app')))
         .on('data', () => {
             if (firstBuildReady && callback) callback()
         });

@@ -1,7 +1,4 @@
-import {debugEnabled} from './../../parameters.config';
-import {pagesConstants} from './../constants';
-
-function config($logProvider, $translateProvider, ru, $locationProvider,
+function config($logProvider, $locationProvider,
                 toastr, $httpProvider, CacheFactoryProvider, $urlRouterProvider) {
     'ngInject';
 
@@ -15,12 +12,8 @@ function config($logProvider, $translateProvider, ru, $locationProvider,
         storeOnResolve: true
     });
 
-    $urlRouterProvider.otherwise(pagesConstants.MAIN);
+    $urlRouterProvider.otherwise('/');
     $logProvider.debugEnabled(true);
-    $translateProvider.useSanitizeValueStrategy(false);
-    $httpProvider.interceptors.push('AuthInterceptor');
-    $translateProvider.translations('ru', ru);
-    $translateProvider.preferredLanguage('ru');
     toastr.options.closeButton = true;
     toastr.options.positionClass = 'toast-bottom-right';
 

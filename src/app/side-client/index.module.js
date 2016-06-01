@@ -4,14 +4,14 @@ import runBlock from './index.run';
 
 import sharedComponents from './../shared-components/shared-components.module';
 import api from './../api/api.module';
+import routeConfig from './index.route';
 
-import album from './endpoints/album/album.module';
-import photo from './endpoints/photo/photo.module';
+import indexEndpoint from './endpoints/index/index.component';
+import searchEndpoint from './endpoints/search/search.component';
 
 /////////////////////////////
 
 angular.module('front', [
-        'parameters.config',
         'ngAnimate',
         'ngCookies',
         'ngTouch',
@@ -23,15 +23,16 @@ angular.module('front', [
         'angularFileUpload',
         'ngTagsInput',
         sharedComponents,
-        api,
-        album,
-        photo
+        api
     ])
     .constant('toastr', toastr)
     .constant('moment', moment)
     .constant('alert', swal)
-    .constant('localStorage', localStorage)
 
+    .component('indexEndpoint', indexEndpoint)
+    .component('searchEndpoint', searchEndpoint)
+
+    .config(routeConfig)
     .config(config)
     .run(runBlock)
 ;

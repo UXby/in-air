@@ -1,7 +1,8 @@
 import Album from './models/Album';
 import Photo from './models/Photo';
+import {API_URL} from './../constants';
 
-function config(apiProvider, API_URL) {
+function config(apiProvider) {
     'ngInject';
 
     apiProvider.setBaseRoute(API_URL);

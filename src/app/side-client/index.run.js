@@ -1,4 +1,4 @@
-function runBlock($log) {
+function runBlock() {
     'ngInject';
 
 }

@@ -1,0 +1,57 @@
+<div class="full-block">
+
+    <div class="video-container">
+        <div class="filter"></div>
+        <video autoplay loop class="fillWidth">
+            <source src="/assets/video/bg.mp4" type="video/mp4"/>
+            Your browser does not support the video tag. I
+            <source src="/assets/video/bg.webpm" type="video/webm"/>
+        </video>
+        <div class="poster hidden">
+            <img src="/assets/img/bg.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="search-form">
+        <h1 class="title">Cheap flight tickets</h1>
+
+        <div class="description">The best way to buy cheap airline tickets</div>
+
+        <form class="form-inline">
+            <div class="form-group">
+                <label class="sr-only" for="inputFrom">From</label>
+                <input type="text"
+                       ng-model="$ctrl.from"
+                       uib-typeahead="state for state in $ctrl.availableFrom | filter:$viewValue | limitTo:8"
+                       class="form-control"
+                       id="inputFrom"
+                       placeholder="From">
+            </div>
+            <div class="form-group">
+                <label class="sr-only" for="inputTo">To</label>
+                <input type="text"
+                       ng-model="$ctrl.to"
+                       uib-typeahead="state for state in $ctrl.availableTo | filter:$viewValue | limitTo:8"
+                       class="form-control"
+                       id="inputTo"
+                       placeholder="To">
+            </div>
+            <div class="form-group">
+                <label class="sr-only" for="inputDepart">Depart</label>
+                <input type="text" class="form-control" id="inputDepart" placeholder="Depart">
+            </div>
+            <div class="form-group">
+                <label class="sr-only" for="inputReturn">Return</label>
+                <input type="text" class="form-control" id="inputReturn" placeholder="Return">
+            </div>
+            <div class="row action-row">
+                <button type="submit" class="btn btn-warning search-btn">Search tickets</button>
+            </div>
+        </form>
+    </div>
+</div>
+<footer class="footer text-left">
+    Source code available on github:
+    <img src="/assets/img/Octocat.png" alt="">
+    <a href="https://github.com/zaqqaz/in-air">@zaqqaz</a>
+</footer>
