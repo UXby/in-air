@@ -5,7 +5,7 @@ In-air - simple fly tickets system (boilerplate).
 ## What included
 
  - Angular 1.5.6
- - Gulp build toolchain (webpack, ES6 - babel)
+ - **Gulp 4** build toolchain (webpack, ES6 - babel)
 
 ### Front-end
 Just type:

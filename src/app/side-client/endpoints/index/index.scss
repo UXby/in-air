@@ -72,4 +72,10 @@
       height: 20px;
     }
   }
+
+  .popover {
+    max-width: none !important;
+    width: 320px;
+    overflow: hidden;
+  }
 }

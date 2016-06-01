@@ -25,3 +25,7 @@ body {
   height: 100%;
   display: block;
 }
+
+:focus {
+  outline: none;
+}

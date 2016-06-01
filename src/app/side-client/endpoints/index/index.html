@@ -38,11 +38,33 @@
             </div>
             <div class="form-group">
                 <label class="sr-only" for="inputDepart">Depart</label>
-                <input type="text" class="form-control" id="inputDepart" placeholder="Depart">
+                <input type="text"
+                       value="{{$ctrl.depart | date:'d MMMM'}}"
+                       class="form-control"
+                       id="inputDepart"
+                       placeholder="Depart"
+                       uib-popover-template="'departPicker.html'"
+                       popover-placement="bottom"
+                       popover-is-open="$ctrl.departPickerIsOpen">
+
+                    <script type="text/ng-template" id="departPicker.html">
+                        <uib-datepicker ng-model="$ctrl.depart"></uib-datepicker>
+                    </script>
             </div>
             <div class="form-group">
                 <label class="sr-only" for="inputReturn">Return</label>
-                <input type="text" class="form-control" id="inputReturn" placeholder="Return">
+                <input type="text"
+                       value="{{$ctrl.return | date:'d MMMM'}}"
+                       class="form-control"
+                       id="inputReturn"
+                       placeholder="Return"
+                       uib-popover-template="'returnPicker.html'"
+                       popover-placement="bottom"
+                       popover-is-open="$ctrl.returnPickerIsOpen">
+
+                <script type="text/ng-template" id="returnPicker.html">
+                    <uib-datepicker ng-model="$ctrl.return"></uib-datepicker>
+                </script>
             </div>
             <div class="row action-row">
                 <button type="submit" class="btn btn-warning search-btn">Search tickets</button>
