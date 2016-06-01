@@ -29,3 +29,9 @@ body {
 :focus {
   outline: none;
 }
+
+.popover {
+  max-width: none !important;
+  width: 320px;
+  overflow: hidden;
+}

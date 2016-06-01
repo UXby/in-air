@@ -7,7 +7,7 @@ function routeConfig($stateProvider) {
             template: '<index-endpoint class="index full-block"></index-endpoint>'
         })
         .state('search', {
-            url: '/search',
+            url: '/search/:from/:to/:depart/:return',
             template: '<search-endpoint class="search full-block"></search-endpoint>'
         });
 }

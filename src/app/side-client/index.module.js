@@ -22,6 +22,7 @@ angular.module('front', [
         'angular-cache',
         'angularFileUpload',
         'ngTagsInput',
+        'ui-rangeSlider',
         sharedComponents,
         api
     ])

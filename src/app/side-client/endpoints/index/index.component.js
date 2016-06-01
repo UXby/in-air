@@ -1,7 +1,7 @@
 import template from './index.html';
 
-class ListController {
-    constructor() {
+class IndexController {
+    constructor(alert, $state) {
         "ngInject";
 
         this.availableFrom = ['New Delhi', 'Minsk'];
@@ -12,6 +12,8 @@ class ListController {
         this._return = null;
         this._returnPickerIsOpen = false;
         this._departPickerIsOpen = false;
+        this._alert = alert;
+        this._$state = $state;
     }
 
     get returnPickerIsOpen() {
@@ -50,10 +52,21 @@ class ListController {
         this.returnPickerIsOpen = false;
         this._return = v;
     }
+
+    onSubmit() {
+        this.returnPickerIsOpen = false;
+        this.departPickerIsOpen = false;
+        
+        if (!(this.from && this.to && this._return && this._depart)) {
+            return this._alert({type: 'warning', title: 'Please fill all fields on form'});
+        }
+
+        this._$state.go('search', {from: this.from, to: this.to, depart: this._depart, return: this.return})
+    }
 }
 
 
 export default {
     template: template,
-    controller: ListController
+    controller: IndexController
 };
