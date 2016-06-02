@@ -4,7 +4,6 @@ let Ticket = require("./Ticket.js");
 
 class TicketController {
     search(req, res) {
-        console.log(req.query);
         let from = new Date(+req.query.from);
         let to = new Date(+req.query.to);
         let tickets = [];
