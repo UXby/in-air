@@ -5,9 +5,8 @@ const argv = require('yargs').argv;
 
 exports.isDevelopment = !(argv.prod || argv.production);
 exports.paths = {
-    initModule: './src/app/side-client/index.module.js',
-    src: './src',
-    app: './src/app',
+    initModule: './frontend/app/side-client/index.module.js',
+    src: './frontend',
     dist: './web',
     tmp: './.tmp'
 };
