@@ -1,7 +1,6 @@
 "use strict";
 
 const express = require('express');
-const DB = require("./db");
 const Rest = require('./rest/index');
 const app = express();
 const rest = new Rest(app);

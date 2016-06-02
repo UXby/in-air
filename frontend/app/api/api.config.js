@@ -1,5 +1,4 @@
-import Album from './models/Album';
-import Photo from './models/Photo';
+import Ticket from './models/Ticket';
 import {API_URL} from './../constants';
 
 function config(apiProvider) {
@@ -7,18 +6,11 @@ function config(apiProvider) {
 
     apiProvider.setBaseRoute(API_URL);
 
-    apiProvider.endpoint('album')
-        .route('albums/:id')
-        .model(Album)
+    apiProvider.endpoint('ticket')
+        .route('tickets/:id')
+        .model(Ticket)
         .addHttpAction('GET', 'query', {isArray: true, headersForReading: ['x-total-count']})
-        .addHttpAction('PATCH', 'patch', {params: {id: '@id'}});
-
-    apiProvider.endpoint('photo')
-        .route('albums/:album_id/photos/:id')
-        .model(Photo)
-        .addHttpAction('GET', 'query', {isArray: true, headersForReading: ['x-total-count']})
-        .addHttpAction('POST', 'save', {params: {album_id: '@album_id'}})
-        .addHttpAction('PATCH', 'patch', {params: {album_id: '@album_id'}});
+    ;
 }
 
 export default config;

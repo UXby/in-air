@@ -7,3 +7,5 @@ class Ticket {
         this.price = price;
     }
 }
+
+module.exports = Ticket;

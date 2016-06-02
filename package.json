@@ -1,7 +1,11 @@
 {
   "name": "in-air",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "cors": "^2.7.1",
+    "express": "^4.13.4"
+  },
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-core": "^6.9.1",

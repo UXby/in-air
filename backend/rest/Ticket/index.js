@@ -1,14 +1,12 @@
 "use strict";
 
-const Ticket = require("./Ticket.js");
+let Ticket = require("./Ticket.js");
 
 class TicketController {
     search(req, res) {
         console.log(req.query);
-
-        //new Date(+req.query.date_from),
-        let from = 25;
-        let to = 30;
+        let from = new Date(+req.query.from);
+        let to = new Date(+req.query.to);;
         let tickets = [];
         let count = Math.floor(Math.random() * 100 + 1);
 

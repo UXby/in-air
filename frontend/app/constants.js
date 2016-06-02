@@ -1,3 +1,3 @@
-let API_URL = 'http://simplegallery.vagrant/app_dev.php/api/';
+let API_URL = 'http://localhost:8080/api/';
 
 export {API_URL};
