@@ -12,4 +12,6 @@ Just type:
 * `gulp` or `gulp serve` for dev mode
 * `gulp --prod` or `gulp --production` for build an optimized app and transfer to `web` directory
 
-... coming soon.
+### Back-end (simple mocks)
+Just type:
+* `node backend/app.js` (also you can use pm2 etc.)
