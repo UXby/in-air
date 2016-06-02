@@ -56,7 +56,7 @@ class IndexController {
     onSubmit() {
         this.returnPickerIsOpen = false;
         this.departPickerIsOpen = false;
-        
+
         if (!(this.from && this.to && this._return && this._depart)) {
             return this._alert({type: 'warning', title: 'Please fill all fields on form'});
         }

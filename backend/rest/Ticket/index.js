@@ -6,12 +6,12 @@ class TicketController {
     search(req, res) {
         console.log(req.query);
         let from = new Date(+req.query.from);
-        let to = new Date(+req.query.to);;
+        let to = new Date(+req.query.to);
         let tickets = [];
         let count = Math.floor(Math.random() * 100 + 1);
 
         for (let i = 0; i < count; i++) {
-            tickets.push(new Ticket(from, to, Math.floor(Math.random() * 3000 + 100)));
+            tickets.push(new Ticket(from, to, Math.floor(Math.random() *  req.query.priceTo + req.query.priceFrom)));
         }
 
         res.status(201);

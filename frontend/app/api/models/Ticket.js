@@ -1,9 +1,10 @@
 class Ticket {
-    constructor({id, name, description, image}) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.image = image || {};;
+    constructor({from, to, departDate, returnDate, price}) {
+        this.from = from;
+        this.to = to;
+        this.depart = departDate;
+        this.return = returnDate;
+        this.price = price;
     }
 }
 

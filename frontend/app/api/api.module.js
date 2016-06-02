@@ -1,5 +1,5 @@
 import config from './api.config';
-import TicketManager from './services/TicketManager.service'
+import TicketManager from './services/TicketManager.service';
 
 let api = angular
     .module('api', ['ng-rest-api'])

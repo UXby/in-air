@@ -1,7 +1,7 @@
 import template from './search.html';
 
 class SearchController {
-    constructor($stateParams, alert) {
+    constructor($stateParams, $scope, alert, TicketManager, debounce) {
         "ngInject";
 
         this._alert = alert;
@@ -9,6 +9,8 @@ class SearchController {
         this.to = $stateParams.to;
         this.depart = new Date($stateParams.depart);
         this.return = new Date($stateParams.return);
+        this.items = [];
+        this._TicketManager = TicketManager;
 
         this.priceFilter = {
             min: 0,
@@ -17,28 +19,20 @@ class SearchController {
             curMax: 1900
         };
 
-        this.testItems = [
-            {
-                id: 1,
-                price: 250
-            },
-            {
-                id: 2,
-                price: 350
-            },
-            {
-                id: 3,
-                price: 450
-            },
-            {
-                id: 4,
-                price: 450
-            },
-            {
-                id: 5,
-                price: 550
-            }
-        ];
+        $scope.$watchCollection(() => this.priceFilter, debounce((_filter) => {
+            TicketManager.query({
+                    from: this.from,
+                    to: this.to,
+                    depart: this.depart,
+                    return: this.return,
+                    priceFrom: _filter.curMin,
+                    priceTp: _filter.curMax
+                })
+                .then((tickets) => {
+                    this.items = tickets;
+                })
+            ;
+        }, 300, true));
     }
 
     buy() {

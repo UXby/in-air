@@ -9,7 +9,7 @@ function config(apiProvider) {
     apiProvider.endpoint('ticket')
         .route('tickets/:id')
         .model(Ticket)
-        .addHttpAction('GET', 'query', {isArray: true, headersForReading: ['x-total-count']})
+        .addHttpAction('GET', 'query', {isArray: true})
     ;
 }
 

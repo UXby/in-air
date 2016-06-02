@@ -57,7 +57,8 @@
     </div>
 </div>
 <div class="container results">
-    <div class="item col-xs-12" ng-repeat="item in $ctrl.testItems | range : 'price' : $ctrl.priceFilter.curMin : $ctrl.priceFilter.curMax">
+    <div class="item col-xs-12"
+         ng-repeat="item in $ctrl.items | range : 'price' : $ctrl.priceFilter.curMin : $ctrl.priceFilter.curMax">
         <div class="dates col-xs-9">
             {{$ctrl.depart | date:'d MMMM'}}
             <div class="glyphicon glyphicon-plane"></div>
