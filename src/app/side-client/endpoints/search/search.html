@@ -1,3 +1,6 @@
+<div class="back" ui-sref="index">
+    <span class="icon glyphicon glyphicon-chevron-left"></span>
+</div>
 <header class="header">
     <form class="form-inline">
         <div class="form-group">
@@ -43,9 +46,26 @@
         Filter by price:
     </div>
     <div class="col-md-8">
-        <div range-slider min="0" max="100" step="5"></div>
+
+        <div range-slider
+             min="$ctrl.priceFilter.min"
+             max="$ctrl.priceFilter.max"
+             model-min="$ctrl.priceFilter.curMin"
+             model-max="$ctrl.priceFilter.curMax"
+             filter="currency:'$'"
+             step="10"></div>
     </div>
 </div>
 <div class="container results">
-    <div class="item col-xs-12"></div>
+    <div class="item col-xs-12" ng-repeat="item in $ctrl.testItems | range : 'price' : $ctrl.priceFilter.curMin : $ctrl.priceFilter.curMax">
+        <div class="dates col-xs-9">
+            {{$ctrl.depart | date:'d MMMM'}}
+            <div class="glyphicon glyphicon-plane"></div>
+            {{$ctrl.return | date:'d MMMM'}}
+        </div>
+        <div class="price col-xs-3">
+            <p>{{item.price}} $</p>
+            <button class="btn btn-warning" ng-click="$ctrl.buy();">Buy!</button>
+        </div>
+    </div>
 </div>
