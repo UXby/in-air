@@ -1,17 +1,17 @@
-.search{
+.search {
   background: #eaeaea;
-  .header{
+  .header {
     background: $brand-primary;
     padding: 20px;
     text-align: center;
   }
 
-  .range-price{
+  .range-price {
     width: 100%;
     text-align: center;
     background: #f8f8f8;
     padding: 10px;
-    div{
+    div {
       font-size: 22px;
       text-transform: capitalize;
       margin: 0;
@@ -19,38 +19,38 @@
     @extend .clearfix;
   }
 
-  .results{
+  .results {
     display: flex;
     justify-content: center;
     flex-direction: column;
 
-    .item{
+    .item {
       display: flex;
       max-width: 650px;
       height: 160px;
       background: #fff;
       margin: 10px auto;
-      box-shadow: 0 0 3px 0 rgba(158,158,158,.5);
+      box-shadow: 0 0 3px 0 rgba(158, 158, 158, .5);
       border-radius: 3px;
       padding: 0;
 
-      div{
+      div {
         display: flex;
         align-items: center;
         justify-content: center;
       }
 
-      .price{
+      .price {
         flex-direction: column;
         background: #f1f1f1;
         color: gray;
-        font-size: 26px;
-        box-shadow: 0 0 3px 0 rgba(158,158,158,.5);
-        border-left: 2px dashed rgba(158,158,158,.5);
+        font-size: 22px;
+        box-shadow: 0 0 3px 0 rgba(158, 158, 158, .5);
+        border-left: 2px dashed rgba(158, 158, 158, .5);
       }
-      .dates{
+      .dates {
         font-size: 20px;
-        .glyphicon{
+        .glyphicon {
           font-size: 60px;
           margin-left: 20px;
           margin-right: 20px;
@@ -63,5 +63,8 @@
         margin-bottom: 40px;
       }
     }
+  }
+  .ngrs-join {
+    margin-top: -3px !important;
   }
 }

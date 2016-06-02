@@ -40,12 +40,12 @@
                 <label class="sr-only" for="inputDepart">Depart</label>
                 <input type="text"
                        value="{{$ctrl.depart | date:'d MMMM'}}"
-                       class="form-control"
+                       class="form-control cursor-pointer"
                        id="inputDepart"
                        placeholder="Depart"
                        uib-popover-template="'departPicker.html'"
                        popover-placement="bottom"
-                       popover-is-open="$ctrl.departPickerIsOpen">
+                       popover-is-open="$ctrl.departPickerIsOpen" readonly>
 
                     <script type="text/ng-template" id="departPicker.html">
                         <uib-datepicker ng-model="$ctrl.depart"></uib-datepicker>
@@ -55,12 +55,12 @@
                 <label class="sr-only" for="inputReturn">Return</label>
                 <input type="text"
                        value="{{$ctrl.return | date:'d MMMM'}}"
-                       class="form-control"
+                       class="form-control cursor-pointer"
                        id="inputReturn"
                        placeholder="Return"
                        uib-popover-template="'returnPicker.html'"
                        popover-placement="bottom"
-                       popover-is-open="$ctrl.returnPickerIsOpen">
+                       popover-is-open="$ctrl.returnPickerIsOpen" readonly>
 
                 <script type="text/ng-template" id="returnPicker.html">
                     <uib-datepicker ng-model="$ctrl.return"></uib-datepicker>
