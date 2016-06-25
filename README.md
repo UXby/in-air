@@ -1,4 +1,4 @@
-In-air - simple fly tickets system (boilerplate).
+In-air - simple fly tickets system (boilerplate for educational use).
 =====================
 ![2016-06-02 0 39 29](https://cloud.githubusercontent.com/assets/2823336/15726624/942394da-285a-11e6-87fc-9ababc5e20f1.png)
 
